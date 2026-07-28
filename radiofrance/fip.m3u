@@ -1,0 +1,45 @@
+#EXTM3U
+#EXTINF:-1,FIP Main - Eclectic/Freeform (128k MP3)
+http://icecast.radiofrance.fr/fip-midfi.mp3
+#EXTINF:-1,FIP Main - Eclectic/Freeform (192k AAC HLS)
+https://stream.radiofrance.fr/fip/fip_hifi.m3u8
+#EXTINF:-1,FIP Rock (128k MP3)
+http://icecast.radiofrance.fr/fiprock-midfi.mp3
+#EXTINF:-1,FIP Rock (192k AAC HLS)
+https://stream.radiofrance.fr/fiprock/fiprock_hifi.m3u8
+#EXTINF:-1,FIP Jazz (128k MP3)
+http://icecast.radiofrance.fr/fipjazz-midfi.mp3
+#EXTINF:-1,FIP Jazz (192k AAC HLS)
+https://stream.radiofrance.fr/fipjazz/fipjazz_hifi.m3u8
+#EXTINF:-1,FIP Groove - Funk/Soul/Hip-Hop-adjacent groove (128k MP3)
+http://icecast.radiofrance.fr/fipgroove-midfi.mp3
+#EXTINF:-1,FIP Groove - Funk/Soul/Hip-Hop-adjacent groove (192k AAC HLS)
+https://stream.radiofrance.fr/fipgroove/fipgroove_hifi.m3u8
+#EXTINF:-1,FIP Monde - World music (128k MP3)
+http://icecast.radiofrance.fr/fipworld-midfi.mp3
+#EXTINF:-1,FIP Monde - World music (192k AAC HLS)
+https://stream.radiofrance.fr/fipworld/fipworld_hifi.m3u8
+#EXTINF:-1,FIP Nouveautés - New releases (128k MP3)
+http://icecast.radiofrance.fr/fipnouveautes-midfi.mp3
+#EXTINF:-1,FIP Nouveautés - New releases (192k AAC HLS)
+https://stream.radiofrance.fr/fipnouveautes/fipnouveautes_hifi.m3u8
+#EXTINF:-1,FIP Reggae (128k MP3)
+http://icecast.radiofrance.fr/fipreggae-midfi.mp3
+#EXTINF:-1,FIP Reggae (192k AAC HLS)
+https://stream.radiofrance.fr/fipreggae/fipreggae_hifi.m3u8
+#EXTINF:-1,FIP Pop (128k MP3)
+http://icecast.radiofrance.fr/fippop-midfi.mp3
+#EXTINF:-1,FIP Pop (192k AAC HLS)
+https://stream.radiofrance.fr/fippop/fippop_hifi.m3u8
+#EXTINF:-1,FIP Électro - Electronic (128k MP3)
+http://icecast.radiofrance.fr/fipelectro-midfi.mp3
+#EXTINF:-1,FIP Électro - Electronic (192k AAC HLS)
+https://stream.radiofrance.fr/fipelectro/fipelectro_hifi.m3u8
+#EXTINF:-1,FIP Hip-Hop (128k MP3)
+http://icecast.radiofrance.fr/fiphiphop-midfi.mp3
+#EXTINF:-1,FIP Hip-Hop (192k AAC HLS)
+https://stream.radiofrance.fr/fiphiphop/fiphiphop_hifi.m3u8
+#EXTINF:-1,FIP Metal (128k MP3)
+http://icecast.radiofrance.fr/fipmetal-midfi.mp3
+#EXTINF:-1,FIP Metal (192k AAC HLS)
+https://stream.radiofrance.fr/fipmetal/fipmetal_hifi.m3u8
