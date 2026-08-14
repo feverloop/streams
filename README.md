@@ -14,6 +14,8 @@ one `.m3u` per station family:
 ```
 radiofrance/
   fip.m3u        # FIP main + 10 themed channels
+bassdrive/
+  bassdrive.m3u  # Bassdrive - highest-bitrate mirrors
 ```
 
 ## Format convention
@@ -83,3 +85,22 @@ Caveats worth knowing if you edit this file:
 - `icecast.radiofrance.fr/status-json.xsl` returns 403, so mounts cannot be
   enumerated from a directory listing — new channels have to be found by
   probing the slug guessed from the channel's French name.
+
+### `bassdrive/bassdrive.m3u`
+
+Bassdrive (bassdrive.com) — single station, no themed sub-channels. Two
+mirrors at the quality ceiling, kept both for failover. Verified 2026-08-14.
+
+- **192k MP3** — `http://chi.bassdrive.co:80` (Chicago) and
+  `http://au.bassdrive.co:8000` (Australia). Highest bitrate offered.
+
+Other mirrors/tiers exist but are excluded as below the ceiling: `icecast
+ice.bassdrive.net:80/stream` (128k MP3), `bassdrive.radioca.st:8702` (128k
+MP3), `stream.bassdrive.uk:8200` (128k MP3), `ice.bassdrive.net:80/stream56`
+and `/stream32` (56k/32k AAC+, for low-bandwidth listening).
+
+The site's `bassdrive.m3u`/`bassdrive3.m3u`/`bassdrive6.m3u` playlist files
+(linked from bassdrive.com/radio) resolve to `ice.bassdrive.net` mounts only —
+the higher-bitrate regional mirrors used here aren't linked from the site and
+were found by testing known Bassdrive mirror hostnames directly with
+`icy-br`/`curl -I` probes.
