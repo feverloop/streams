@@ -60,21 +60,21 @@ overstate the rate. Use `ffprobe`'s per-stream `bit_rate`.
 
 ## Tools
 
-`tools/` — scripts to re-check a playlist's reachability before trusting it.
-Both use GET with a 1-byte range, not HEAD (Shoutcast rejects bare HEAD with
-400), and stop reading after the response headers arrive rather than
-downloading a live stream's body (most Shoutcast mounts ignore `Range` and
-just keep streaming, so a naive full-body GET would hang until timeout).
+`tools/filter-streams.py` — re-checks a playlist's reachability before
+trusting it. `uv run tools/filter-streams.py <input.m3u> [-o output.m3u]
+[--keep-failed]`. Self-installs deps via inline `uv` script metadata
+(`requests`, `dnspython`), no venv setup needed. Uses GET with a 1-byte
+range, not HEAD (Shoutcast rejects bare HEAD with 400), and stops reading
+after the response headers arrive rather than downloading a live stream's
+body (most Shoutcast mounts ignore `Range` and just keep streaming, so a
+naive full-body GET would hang until timeout). Pins DNS resolution to
+`1.1.1.1`. Default drops unreachable entries; `--keep-failed` keeps them,
+commented out with a reason (`HTTP <code>`, `TIMEOUT`, `DNS_ERROR`,
+`CONNECTION_ERROR`, `INVALID_URL`).
 
-- `tools/filter-streams.py` — `uv run tools/filter-streams.py <input.m3u>
-  [-o output.m3u] [--keep-failed]`. Self-installs deps via inline `uv`
-  script metadata (`requests`, `dnspython`), no venv setup needed. Pins DNS
-  resolution to `1.1.1.1`. Default drops unreachable entries; `--keep-failed`
-  keeps them, commented out with a reason (`HTTP <code>`, `TIMEOUT`,
-  `DNS_ERROR`, `CONNECTION_ERROR`, `INVALID_URL`).
-- `tools/filter-streams.sh` — `tools/filter-streams.sh <input.m3u>
-  [output.m3u]`. Simpler bash/curl equivalent: OK/SKIP only, no
-  reason-tagging, no DNS override, drops failed entries silently.
+Requires `uv` on `PATH`. A dependency-free bash/curl equivalent
+(`filter-streams.sh`) existed briefly but was retired — see git history
+if you need it back for a host without `uv`.
 
 ## Playlists
 
